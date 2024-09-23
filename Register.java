@@ -238,7 +238,9 @@ public class Register implements ActionListener,ItemListener
 		}
 		else if(e.getActionCommand().equals("Cancel"))
 		{
-			
+			right.removeAll();
+			right.repaint();
+			Register r=new Register(right);
 		}
 		else if(e.getActionCommand().equals("Individual"))
 		{

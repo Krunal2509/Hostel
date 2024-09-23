@@ -73,6 +73,13 @@ public class Admission extends JFrame implements ActionListener
 			MyProfile p=new MyProfile(right);
 			
 		}
+		else if(e.getActionCommand().equals("Fees"))
+		{
+			right.removeAll();
+			right.repaint();
+			Fees f=new Fees(right);
+			
+		}
 	}
 	
 }
