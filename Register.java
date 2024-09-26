@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
+import javax.swing.*;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -55,6 +56,7 @@ public class Register implements ActionListener,ItemListener
 		in=new JRadioButton("Individual",false);
 		sh=new JRadioButton("Sharing",true);
 		
+		
 			
 		jcPlan = new JComboBox();
 		
@@ -69,10 +71,7 @@ public class Register implements ActionListener,ItemListener
 		
 		jcPlan.addItemListener(this);
 		
-		
-		register.addActionListener(this);
-		cancel.addActionListener(this);
-		
+				
 		n.setFont(f);
 		p.setFont(f);
 		e.setFont(f);
@@ -159,6 +158,7 @@ public class Register implements ActionListener,ItemListener
 		cancel.setFocusPainted(false);
 		cancel.setBorderPainted(false);
 		
+		
 		right.add(na);
 		right.add(n);
 		right.add(ph);
@@ -217,12 +217,11 @@ public class Register implements ActionListener,ItemListener
 			{
 				Class.forName("com.mysql.jdbc.Driver");
 				System.out.print("\n DRIVER CONNECTED... ");
-				Connection con = DriverManager.getConnection
-						("localhost:3306/hostel","root","");
+				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hostel","root","");
 				Statement st = con.createStatement();
 				
 				st.executeUpdate("insert into student values('"+name+"','"+phno+"','"+mail+"','"+addr+"','"+col+"','"+type+"','"+plan+"',"+amount+")");
-				
+					
 				st.close();
 				con.close();
 				System.out.print("\n RECORD INSTERTED.... ");

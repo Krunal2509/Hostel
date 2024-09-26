@@ -1,100 +1,117 @@
 package Hostel;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 
-public class AboutUs extends JFrame implements AdjustmentListener{
-	Color c;
-	JLabel l1;
-	JTextArea t1,t2,t3;
-	JLabel i1,i2,i3;
-	Font f;
-	Image new1,new2;
-	JScrollBar sb;
-	
-	
-	AboutUs(String s)
-	{
-		super(s);
-		c=new Color(227, 223, 208);
-		this.getContentPane().setBackground(c);
-		setLayout(null);
-		aboutUs();
-		
-	}
-	
-	void aboutUs()
-	{
-		
-		
-		sb=new JScrollBar(1,0,900,0,2000);
-		sb.addAdjustmentListener(this);
-		sb.setBounds(0,0,30,850);
-		sb.setBackground(Color.WHITE);
-		sb.setUI(new javax.swing.plaf.basic.BasicScrollBarUI() {
-	            @Override
-	            protected void configureScrollBarColors() {
-	                this.thumbColor = Color.GRAY; // Thumb color
-	            }
-	        });
-		add(sb);
-		
-		f=new Font("Arial",Font.BOLD,40);
-		l1=new JLabel("Hostel Facilities : ");
-		l1.setBounds(575,30,350,100);
-		l1.setBackground(c);
-		l1.setFont(f);
-		add(l1);
-		
-		ImageIcon I1=new ImageIcon("src/Hostel/room.jpeg");
-		ImageIcon I2=new ImageIcon("src/Hostel/dinningarea.png");
-		
-		Image ii1=I1.getImage();
-		Image ii2=I2.getImage();
-		
-		new1=ii1.getScaledInstance(400,300,Image.SCALE_SMOOTH);
-		new2=ii2.getScaledInstance(400,300,Image.SCALE_SMOOTH);
-		
-		i1=new JLabel(new ImageIcon(new1));
-		i2=new JLabel(new ImageIcon(new2));
-		
-		
-		i1.setBounds(50,150,400,300);
-		i2.setBounds(1000,500,400,300);
-		add(i1);
-		add(i2);
-		
-		t1=new JTextArea("In Our Hostel rooms , We are providing Two Persons are sharing the each room  and they have individual beds , table , cupboards etc . ");
-		t1.setEditable(false);
-		t1.setBounds(600,300,800,100);
-		t1.setLineWrap(true);
-		t1.setWrapStyleWord(true);
-		f=new Font("Arial",Font.BOLD,25);
-		t1.setFont(f);
-		t1.setBackground(c);
-		c=new Color(139, 194, 139);
-		t1.setForeground(c);
-		add(t1);
-		
-		t2=new JTextArea("In Our Dinning - Area , We are providing Tables , Fresh Food , also whole area there is a central A.C  etc . ");
-		t2.setEditable(false);
-		t2.setBounds(100,600,800,100);
-		t2.setLineWrap(true);
-		t2.setWrapStyleWord(true);
-		t2.setFont(f);
-		c=new Color(227, 223, 208);
-		t2.setBackground(c);
-		c=new Color(139, 194, 139);
-		t2.setForeground(c);
-		add(t2);
-		
-		
-	}
+public class AboutUs extends JFrame {
+    Color c;
+    JLabel l1;
+    JTextArea t1, t2, t3, t4, t5;
+    JLabel i1, i2, i3, i4, i5;
+    Font f;
+    Image new1, new2, new3, new4, new5;
+    JScrollPane scrollpane;
+    JPanel Main;
 
-	@Override
-	public void adjustmentValueChanged(AdjustmentEvent e) 
-	{
-		
-	}
-	
+    AboutUs(String s) {
+        super(s);
+        c = new Color(227, 223, 208);
+        this.getContentPane().setBackground(c);
+        
+        Main = new JPanel();
+        Main.setLayout(null); 
+        Main.setBackground(c);
+        Main.setPreferredSize(new Dimension(1500, 2100)); 
+
+        setupComponents();
+
+        scrollpane = new JScrollPane(Main);
+        scrollpane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        scrollpane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollpane.getVerticalScrollBar().setPreferredSize(new Dimension(35, Integer.MAX_VALUE));
+
+        // Set initial scroll position to top-left corner
+        SwingUtilities.invokeLater(() -> {
+            scrollpane.getViewport().setViewPosition(new Point(0, 0));
+        });
+
+        add(scrollpane, BorderLayout.CENTER);
+
+    }
+
+    private void setupComponents() {
+        loadImages();
+
+        addHeading();
+        addTextAreas();
+    }
+    
+    private void addTextAreas() {
+        f = new Font("Arial", Font.BOLD, 25);
+
+        t1 = createTextArea("In Our Hostel rooms, we are providing Two Persons sharing each room and they have individual beds, table, cupboards etc.", 600, 300);
+        t2 = createTextArea("In Our Dining Area, we are providing Tables, Fresh Food, and there is also a central A.C.", 100, 600);
+        t3 = createTextArea("Playground: We have a large playground for playing games and we also conduct events.", 600, 1000);
+        t4 = createTextArea("Indoor Game: We have many indoor games in our indoor game area.", 100, 1400);
+        t5 = createTextArea("GYM: We have a gym area where you can exercise.", 600, 1800);
+    }
+
+    private JTextArea createTextArea(String text, int x, int y) {
+        JTextArea textArea = new JTextArea(text);
+        textArea.setEditable(false);
+        textArea.setBounds(x, y, 800, 100);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        textArea.setFont(f);
+        textArea.setBackground(c);
+        textArea.setForeground(new Color(139, 194, 139));
+        Main.add(textArea);
+        return textArea;
+    }
+
+
+    private void addHeading() {
+        ImageIcon heading = new ImageIcon("src/Hostel/facilities.png");
+        Image h = heading.getImage();
+        Image head = h.getScaledInstance(700, 400, Image.SCALE_SMOOTH);
+        
+        f = new Font("Arial", Font.BOLD, 40);
+        l1 = new JLabel(new ImageIcon(head));
+        l1.setBounds(375, 30, 700, 100);
+        Main.add(l1);
+    }
+
+    private void loadImages() {
+        ImageIcon I1 = new ImageIcon("src/Hostel/room.jpeg");
+        ImageIcon I2 = new ImageIcon("src/Hostel/dinningarea.png");
+        ImageIcon I3 = new ImageIcon("src/Hostel/playground.jpg");
+        ImageIcon I4 = new ImageIcon("src/Hostel/indoorgamearea.jpg");
+        ImageIcon I5 = new ImageIcon("src/Hostel/gymarea.jpg");
+
+        new1 = I1.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
+        new2 = I2.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
+        new3 = I3.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
+        new4 = I4.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
+        new5 = I5.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
+
+        i1 = new JLabel(new ImageIcon(new1));
+        i2 = new JLabel(new ImageIcon(new2));
+        i3 = new JLabel(new ImageIcon(new3));
+        i4 = new JLabel(new ImageIcon(new4));
+        i5 = new JLabel(new ImageIcon(new5));
+
+        i1.setBounds(50, 150, 400, 300);
+        i2.setBounds(1000, 500, 400, 300);
+        i3.setBounds(50, 900, 400, 300);
+        i4.setBounds(1000, 1300, 400, 300);
+        i5.setBounds(50, 1700, 400, 300);
+
+        Main.add(i1);
+        Main.add(i2);
+        Main.add(i3);
+        Main.add(i4);
+        Main.add(i5);
+    }
+
+    
 }

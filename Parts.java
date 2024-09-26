@@ -56,7 +56,7 @@ public class Parts extends JFrame implements ActionListener
 		
 		b[0]=new JButton("Admission");
 		b[1]=new JButton("Staff");
-		b[2]=new JButton("Manager");
+		b[2]=new JButton("Admin");
 		b[3]=new JButton("About-Us");
 		b[4]=new JButton("Complain");
 		b[5]=new JButton("AVL-Rooms");
@@ -119,42 +119,42 @@ public class Parts extends JFrame implements ActionListener
 		{
 			
 			Admission a=new Admission("Admission");
-			a.setLocation(150,100);
+			a.setLocation(200,100);
 			a.setSize(1500,900);
 			a.setVisible(true);
 		}
 		else if(e.getActionCommand().equals("Staff"))
 		{
 			Staff a=new Staff("Staff");
-			a.setLocation(150,100);
+			a.setLocation(200,100);
 			a.setSize(1500,900);
 			a.setVisible(true);
 		}
-		else if(e.getActionCommand().equals("Manager"))
+		else if(e.getActionCommand().equals("Admin"))
 		{
-			Manager a=new Manager("Manager");
-			a.setLocation(150,100);
+			Admin a=new Admin("Admin");
+			a.setLocation(200,100);
 			a.setSize(1500,900);
 			a.setVisible(true);
 		}
 		else if(e.getActionCommand().equals("About-Us"))
 		{
 			AboutUs a=new AboutUs("AboutUs");
-			a.setLocation(150,100);
+			a.setLocation(200,100);
 			a.setSize(1500,900);
 			a.setVisible(true);
 		}
 		else if(e.getActionCommand().equals("Complain"))
 		{
 			Complain a=new Complain("Complain");
-			a.setLocation(150,100);
+			a.setLocation(200,100);
 			a.setSize(1500,900);
 			a.setVisible(true);
 		}
 		else if(e.getActionCommand().equals("AVL-Rooms"))
 		{
 			Staff a=new Staff("Available Rooms");
-			a.setLocation(150,100);
+			a.setLocation(200,100);
 			a.setSize(1500,900);
 			a.setVisible(true);
 		}

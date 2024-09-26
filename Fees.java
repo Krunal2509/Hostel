@@ -1,8 +1,18 @@
 package Hostel;
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URI;
 import java.awt.*;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.*;
 
-public class Fees {
+public class Fees implements ActionListener
+{
 	int totalFees=40000,paidFees=0,payableFees=40000;
 	String name="YOUR NAME",semester="SEMESTER";
 	JLabel totalfees,paidfees,payablefees,image,na,s;
@@ -85,10 +95,23 @@ public class Fees {
 		receipt.setFont(f);
 		pay.setFont(f);
 		
+		receipt.addActionListener(this);
+		pay.addActionListener(this);
+		
 		bottom.add(totalfees);
 		bottom.add(paidfees);
 		bottom.add(payablefees);
 		bottom.add(receipt);
 		bottom.add(pay);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getActionCommand().equals("Pay"))
+		{
+			try {
+			Desktop.getDesktop().browse(new URI("https://pay.google.com/about/"));
+			}catch(Exception eee) {}
+		}
 	}
 }
