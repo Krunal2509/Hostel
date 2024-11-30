@@ -40,7 +40,7 @@ public class Admin extends JFrame implements ActionListener {
 
         // First Panel Setup
         JPanel firstPanel = new JPanel();
-        firstPanel.setLayout(null); // No layout manager
+        firstPanel.setLayout(null); 
         firstPanel.setBounds(0, 0, 300, 900); // Set position and size of first panel
         firstPanel.setBackground(c); // Match the color with the main frame
 
@@ -253,10 +253,6 @@ public class Admin extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-    	
-    	
-    	
-    	
     }
 
   

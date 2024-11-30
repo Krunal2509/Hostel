@@ -153,7 +153,7 @@ public class Parts extends JFrame implements ActionListener
 		}
 		else if(e.getActionCommand().equals("AVL-Rooms"))
 		{
-			Staff a=new Staff("Available Rooms");
+			AVLRooms a=new AVLRooms("Available Rooms");
 			a.setLocation(200,100);
 			a.setSize(1500,900);
 			a.setVisible(true);
