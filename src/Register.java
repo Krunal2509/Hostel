@@ -193,45 +193,45 @@ public class Register implements ActionListener,ItemListener
 	public void actionPerformed(ActionEvent e) {
 		if(e.getActionCommand().equals("Register"))
 		{
-			String name = na.getText();
-			String phno = ph.getText();
-			String mail = em.getText();
-			String addr = add.getText();
-			String col = coll.getText();
-			String type="";
-			if(in.isSelected())
-			{
-				type = "INDIVIDUAL";
-			}
-			else
-			{
-				type="SHARING";
-			}
-			
-			String plan = jcPlan.getSelectedItem().toString();
-			int amount = Integer.parseInt(amt2.getText());
-			
-			System.out.print(name+","+phno+","+mail+","+addr+","+col+","+type+","+plan+","+amount);
-			
-			try
-			{
-				Class.forName("com.mysql.jdbc.Driver");
-				System.out.print("\n DRIVER CONNECTED... ");
-				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hostel","root","");
-				Statement st = con.createStatement();
-				
-				st.executeUpdate("insert into student values('"+name+"','"+phno+"','"+mail+"','"+addr+"','"+col+"','"+type+"','"+plan+"',"+amount+")");
-					
-				st.close();
-				con.close();
-				System.out.print("\n RECORD INSTERTED.... ");
-				
-				
-			}
-			catch(Exception eee)
-			{
-				System.out.print("\n DATABASE ERROR : "+eee.getMessage());
-			}
+//			String name = na.getText();
+//			String phno = ph.getText();
+//			String mail = em.getText();
+//			String addr = add.getText();
+//			String col = coll.getText();
+//			String type="";
+//			if(in.isSelected())
+//			{
+//				type = "INDIVIDUAL";
+//			}
+//			else
+//			{
+//				type="SHARING";
+//			}
+//			
+//			String plan = jcPlan.getSelectedItem().toString();
+//			int amount = Integer.parseInt(amt2.getText());
+//			
+//			System.out.print(name+","+phno+","+mail+","+addr+","+col+","+type+","+plan+","+amount);
+//			
+//			try
+//			{
+//				Class.forName("com.mysql.jdbc.Driver");
+//				System.out.print("\n DRIVER CONNECTED... ");
+//				Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hostel","root","");
+//				Statement st = con.createStatement();
+//				
+//				st.executeUpdate("insert into student values('"+name+"','"+phno+"','"+mail+"','"+addr+"','"+col+"','"+type+"','"+plan+"',"+amount+")");
+//					
+//				st.close();
+//				con.close();
+//				System.out.print("\n RECORD INSTERTED.... ");
+//				
+//				
+//			}
+//			catch(Exception eee)
+//			{
+//				System.out.print("\n DATABASE ERROR : "+eee.getMessage());
+//			}
 			
 			
 		}
