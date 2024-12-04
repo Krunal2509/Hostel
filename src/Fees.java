@@ -43,7 +43,7 @@ public class Fees implements ActionListener
 	
 	void Top()
 	{
-		image=new JLabel(new ImageIcon("src/User2.png"));
+		image=new JLabel(new ImageIcon("src/asstes/User2.png"));
 		image.setBounds(350,50,200,200);
 		
 		na=new JLabel("Name  : "+name);

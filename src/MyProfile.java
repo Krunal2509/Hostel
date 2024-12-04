@@ -38,7 +38,7 @@ public class MyProfile {
 		na.setBackground(new Color(120, 209, 120));
 		top.add(na);
 		
-		JLabel l=new JLabel(new ImageIcon("src/User.png"));
+		JLabel l=new JLabel(new ImageIcon("src/assets/User.png"));
 		l.setBounds(1000,50,200,200);
 		top.add(l);
 		

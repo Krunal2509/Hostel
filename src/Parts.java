@@ -83,7 +83,7 @@ public class Parts extends JFrame implements ActionListener
 	
 	void Bottom()
 	{
-		i1=new JLabel(new ImageIcon("src/HostelImage.png"));
+		i1=new JLabel(new ImageIcon("src/assets/HostelImage.png"));
 		i1.setBounds(100,300,600,600);
 		add(i1);
 		

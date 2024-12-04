@@ -26,12 +26,12 @@ public class Staff extends JFrame {
         mainPanel.setLayout(new GridLayout(6, 1, 10, 10));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        mainPanel.add(createStaffRow("Prasoon Jha", "Founder", "src/p.jpg"));
-        mainPanel.add(createStaffRow("Krunal Sojitra", "Manager", "src/k.jpg"));
-        mainPanel.add(createStaffRow("Kalp Shah", "CEO", "src/kalp.jpg"));
-        mainPanel.add(createStaffRow("Pratham Parikh", "HR Specialist", "src/prat.jpg"));
-        mainPanel.add(createStaffRow("Hardik", "Marketing", "src/h.jpg"));
-        mainPanel.add(createStaffRow("Afzal Surti", "Relationship Manager", "src/af.jpg"));
+        mainPanel.add(createStaffRow("Prasoon Jha", "Founder", "src/assets/p.jpg"));
+        mainPanel.add(createStaffRow("Krunal Sojitra", "Manager", "src/assets/k.jpg"));
+        mainPanel.add(createStaffRow("Kalp Shah", "CEO", "src/assets/kalp.jpg"));
+        mainPanel.add(createStaffRow("Pratham Parikh", "HR Specialist", "src/assets/prat.jpg"));
+        mainPanel.add(createStaffRow("Hardik", "Marketing", "src/assets/h.jpg"));
+        mainPanel.add(createStaffRow("Afzal Surti", "Relationship Manager", "src/assets/af.jpg"));
 
         this.add(new JScrollPane(mainPanel), BorderLayout.CENTER);
     }

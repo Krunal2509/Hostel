@@ -71,7 +71,7 @@ public class AboutUs extends JFrame {
 
 
     private void addHeading() {
-        ImageIcon heading = new ImageIcon("src/Hostel/facilities.png");
+        ImageIcon heading = new ImageIcon("src/Hostel/assets/facilities.png");
         Image h = heading.getImage();
         Image head = h.getScaledInstance(700, 400, Image.SCALE_SMOOTH);
         
@@ -82,11 +82,11 @@ public class AboutUs extends JFrame {
     }
 
     private void loadImages() {
-        ImageIcon I1 = new ImageIcon("src/room.jpeg");
-        ImageIcon I2 = new ImageIcon("src/dinningarea.png");
-        ImageIcon I3 = new ImageIcon("src/playground.jpg");
-        ImageIcon I4 = new ImageIcon("src/indoorgamearea.jpg");
-        ImageIcon I5 = new ImageIcon("src/gymarea.jpg");
+        ImageIcon I1 = new ImageIcon("src/assets/room.jpeg");
+        ImageIcon I2 = new ImageIcon("src/assets/dinningarea.png");
+        ImageIcon I3 = new ImageIcon("src/assets/playground.jpg");
+        ImageIcon I4 = new ImageIcon("src/assets/indoorgamearea.jpg");
+        ImageIcon I5 = new ImageIcon("src/assets/gymarea.jpg");
 
         new1 = I1.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
         new2 = I2.getImage().getScaledInstance(400, 300, Image.SCALE_SMOOTH);
